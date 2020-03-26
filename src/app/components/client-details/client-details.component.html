@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard
+    </a>
+  </div>
+  <div class="col-md-6">
+    <div class="btn-group pull-right">
+      <a routerLink="/client/edit/{{ id }}" class="btn btn-dark">
+        Edit
+      </a>
+      <button (click)="onDeleteClick()" class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>
+<hr />
+<div *ngIf="client" class="card">
+  <h3 class="card-header">{{ client.name }}</h3>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-8 col-sm-6">
+        <h4>Client ID: {{ client.id }}</h4>
+      </div>
+      <div class="col-md-8 col-sm-6">BALANCE</div>
+    </div>
+    <hr />
+    <ul class="list-group">
+      <li class="list-group-item">Tour: {{ client.tour }}</li>
+      <li class="list-group-item">Text: {{ client.text }}</li>
+      <li class="list-group-item">Email: {{ client.email }}</li>
+      <li class="list-group-item">Phone:</li>
+      <li class="list-group-item">Tickets:</li>
+      <li class="list-group-item">Comments:</li>
+      <li class="list-group-item">Paid:</li>
+      <li class="list-group-item">Date of request:</li>
+    </ul>
+  </div>
+</div>
