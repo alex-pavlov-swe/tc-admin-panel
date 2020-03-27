@@ -4,7 +4,6 @@ import { ClientService } from "../../services/client.service";
 import { Router } from "@angular/router";
 
 import { Client } from "../../models/Client";
-import { from } from "rxjs";
 
 @Component({
   selector: "app-add-client",

@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { ClientService } from "../../services/client.service";
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { FlashMessagesService } from "angular2-flash-messages";
-import { FlashMessagesModule } from "angular2-flash-messages/module/module";
 
 import { Client } from "../../models/Client";
 
