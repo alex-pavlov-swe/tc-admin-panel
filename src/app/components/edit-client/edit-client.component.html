@@ -1,1 +1,100 @@
-<p>edit-client works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/client/{{ id }}" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back to Client
+    </a>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+
+<div class="card mt-3 mb-3">
+  <div class="card-header">
+    Edit Client
+  </div>
+  <div class="card-body">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+      <div class="form-group">
+        <label for="name"> Name </label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          #clientName="ngModel"
+          [ngClass]="{ 'is-invalid': clientName.errors && clientName.touched }"
+          [(ngModel)]="client.name"
+          minlength="2"
+          required
+        />
+
+        <div [hidden]="!clientName.errors?.required" class="invalid-feedback">
+          Name required
+        </div>
+
+        <div [hidden]="!clientName.errors?.minlength" class="invalid-feedback">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name"> Email </label>
+        <input
+          type="text"
+          class="form-control"
+          name="email"
+          #clientEmail="ngModel"
+          [ngClass]="{
+            'is-invalid': clientEmail.errors && clientEmail.touched
+          }"
+          [(ngModel)]="client.email"
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          required
+        />
+
+        <div [hidden]="!clientEmail.errors?.required" class="invalid-feedback">
+          Email required
+        </div>
+
+        <div [hidden]="!clientEmail.errors?.pattern" class="invalid-feedback">
+          Email is not valid
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name"> Text </label>
+        <input
+          type="text"
+          class="form-control"
+          name="text"
+          #clientText="ngModel"
+          [(ngModel)]="client.text"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name"> Tour </label>
+        <input
+          type="text"
+          class="form-control"
+          name="tour"
+          #clientTour="ngModel"
+          [(ngModel)]="client.tour"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="name"> Date </label>
+        <input
+          type="text"
+          class="form-control"
+          name="date"
+          #clientDate="ngModel"
+          [(ngModel)]="client.date"
+        />
+      </div>
+
+      <button type="submit" value="Submit" class="btn btn-primary btn-block">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
