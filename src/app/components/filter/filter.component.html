@@ -1,0 +1,28 @@
+<button (click)="showFilter = !showFilter" class="btn btn-dark mb-3">
+  Filter
+</button>
+<div *ngIf="showFilter">
+  <form #filterForm="ngForm">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        placeholder="Search by name"
+      />
+      <input
+        class="mt-2"
+        type="text"
+        class="form-control"
+        name="By Email"
+        placeholder="Search by email"
+      />
+      <input
+        type="text"
+        class="form-control"
+        name="Tour"
+        placeholder="Serach by tour"
+      />
+    </div>
+  </form>
+</div>
